@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="my-4">Travlr Getaways Admin!</h1>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let trip of trips" class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-header fw-semibold text-center">
+          {{ trip.name }}
+        </div>
+
+        <img
+          [src]="'assets/images/' + trip.image"
+          alt="{{ trip.name }}"
+          class="card-img-top"
+          style="object-fit: cover; height: 200px;"
+        >
+
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">
+            {{ trip.resort }}
+          </h6>
+
+          <p class="text-muted">
+            {{ trip.length }} only {{ trip.perPerson | currency:'USD':true }} per person
+          </p>
+
+          <p class="card-text" [innerHTML]="trip.description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

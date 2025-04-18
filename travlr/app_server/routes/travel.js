@@ -1,9 +1,8 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
+var controller = require('../controllers/travel');
 
-/* GET travel view */
-router.get('/', (req, res) => {
-    res.render('travel', { title: 'Travlr Getaways' });
-});
+/* GET travel page. */
+router.get('/', controller.travel);
 
 module.exports = router;
